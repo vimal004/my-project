@@ -9,10 +9,10 @@ import {
   Button,
   Icon,
 } from "@mui/material";
-import LoginModal from "./LoginModal"; // Ensure the path is correct
+import LoginModal from "../Components/LoginModal"; // Ensure the path is correct
 import { useDispatch, useSelector } from "react-redux";
 import { Logout } from "@mui/icons-material";
-import { login, logout } from "../Redux/Slices/loginSlice";
+import { login, logout } from "../Redux/Slices/loginSlice"; // Ensure the path is correct
 import { Link } from "react-router-dom";
 
 const Header = () => {

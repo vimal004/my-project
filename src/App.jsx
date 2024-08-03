@@ -1,9 +1,9 @@
 import { createBrowserRouter, Outlet } from "react-router-dom";
-import Header from "./Header";
-import Home from "./Home";
+import Header from "./Components/Header";
+import Home from "./Pages/Home";
 import { Provider } from "react-redux";
-import store from "../Redux/store";
-import PatientEntry from "./PatientEntry";
+import store from "./Redux/store";
+import PatientEntry from "./Pages/PatientEntry";
 
 const App = () => {
   return (
