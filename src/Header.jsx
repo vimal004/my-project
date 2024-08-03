@@ -13,6 +13,7 @@ import LoginModal from "./LoginModal"; // Ensure the path is correct
 import { useDispatch, useSelector } from "react-redux";
 import { Logout } from "@mui/icons-material";
 import { login, logout } from "../Redux/Slices/loginSlice";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const dispatch = useDispatch();
@@ -46,16 +47,18 @@ const Header = () => {
             justifyContent="center"
             sx={{ flexGrow: 1 }}
           >
-            <img
-              src="/L.jpg"
-              alt="Logo"
-              style={{
-                width: "38px",
-                height: "38px",
-                borderRadius: "50%",
-                marginRight: "20px",
-              }}
-            />
+            <Link to="">
+              <img
+                src="/L.jpg"
+                alt="Logo"
+                style={{
+                  width: "38px",
+                  height: "38px",
+                  borderRadius: "50%",
+                  marginRight: "20px",
+                }}
+              />
+            </Link>
             <Typography variant="h6" component="div" fontWeight={"bold"}>
               Siddha Shivalayas Patient Management
             </Typography>
