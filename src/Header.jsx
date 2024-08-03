@@ -7,10 +7,10 @@ import {
   IconButton,
   Box,
   Button,
+  Icon,
 } from "@mui/material";
 import LoginModal from "./LoginModal"; // Ensure the path is correct
 import { useDispatch, useSelector } from "react-redux";
-import { AccountCircle } from "@mui/icons-material";
 import { Logout } from "@mui/icons-material";
 import { login, logout } from "../Redux/Slices/loginSlice";
 
@@ -20,7 +20,8 @@ const Header = () => {
   const saveduser = localStorage.getItem("user");
 
   useEffect(() => {
-    if (saveduser) {
+    if (saveduser != null && saveduser != "null") {
+      console.log(saveduser);
       dispatch(login(saveduser));
     }
   }, [saveduser]);
@@ -59,17 +60,20 @@ const Header = () => {
               Siddha Shivalayas Patient Management
             </Typography>
           </Box>
-          <IconButton color="inherit" onClick={handleLoginOpen}>
-            {loggedin ? (
-              <Logout
-                onClick={() => {
-                  dispatch(logout());
-                }}
-              />
-            ) : (
+          {loggedin ? (
+            <IconButton
+              onClick={() => {
+                dispatch(logout());
+                localStorage.setItem("user", null);
+              }}
+            >
+              <Logout />
+            </IconButton>
+          ) : (
+            <IconButton onClick={handleLoginOpen}>
               <LoginSharp />
-            )}
-          </IconButton>
+            </IconButton>
+          )}
         </Toolbar>
       </AppBar>
       <LoginModal open={loginOpen} onClose={handleLoginClose} />

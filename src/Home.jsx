@@ -1,9 +1,13 @@
 import React from "react";
 import { Button, Stack } from "@mui/material";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const Home = () => {
-  return (
+  const loggedin = useSelector((state) => state.login.user);
+  return !loggedin ? (
+    <h1 className="m-10 font-bold text-center">Sign in to get access</h1>
+  ) : (
     <div
       style={{
         display: "flex",
