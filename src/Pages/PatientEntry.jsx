@@ -314,6 +314,19 @@ const PatientEntry = () => {
                   )}
                 </Button>
               </div>
+              <div className="text-center">
+                <Button
+                  variant="contained"
+                  color="primary"
+                  style={{
+                    borderRadius: "8px",
+                    textTransform: "none",
+                    margin: "8px",
+                  }}
+                >
+                  View Patients
+                </Button>
+              </div>
             </Grid>
           </Grid>
           <Snackbar
