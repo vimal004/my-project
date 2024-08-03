@@ -52,8 +52,8 @@ const Header = () => {
                 src="/L.jpg"
                 alt="Logo"
                 style={{
-                  width: "38px",
-                  height: "38px",
+                  width: "35px",
+                  height: "35px",
                   borderRadius: "50%",
                   marginRight: "20px",
                 }}
