@@ -15,6 +15,8 @@ import {
 } from "@mui/material";
 import { Close as CloseIcon } from "@mui/icons-material";
 import MuiAlert from "@mui/material/Alert";
+import { useDispatch } from "react-redux";
+import { login } from "../Redux/Slices/loginSlice";
 
 const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
@@ -28,6 +30,7 @@ const LoginModal = ({ open, onClose }) => {
   const [snackbarMessage, setSnackbarMessage] = useState("");
   const [snackbarSeverity, setSnackbarSeverity] = useState("success");
   const theme = useTheme();
+  const dispatch = useDispatch();
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -38,6 +41,8 @@ const LoginModal = ({ open, onClose }) => {
       })
       .then((res) => {
         localStorage.setItem("user", res?.data?.email);
+        dispatch(login(res?.data?.email));
+        console.log(res?.data?.email);
         onClose();
         setSnackbarMessage("Login Successful!");
         setSnackbarSeverity("success");
