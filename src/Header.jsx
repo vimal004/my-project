@@ -34,7 +34,7 @@ const Header = () => {
                 marginRight: "20px",
               }}
             />
-            <Typography variant="h6" component="div">
+            <Typography variant="h6" component="div" fontWeight={"bold"}>
               Siddha Shivalayas Patient Management
             </Typography>
           </Box>
